@@ -1,0 +1,41 @@
+#include "functions.h"
+#include <string>
+#include <unordered_map>
+#include "CommandTable.h"
+#include "GameAPI.h"
+#include "GameEffects.h"
+#include "GameObjects.h"
+#include "GameRTTI.h"
+#include "GameExtraData.h"
+#include "SafeWrite.h"
+#include "GameMenus.h"
+
+extern int g_version;
+
+extern char* s_strArgBuffer;
+extern char* s_strValBuffer;
+
+extern std::unordered_map<UInt32, char*> markerIconMap;
+
+extern CommandInfo* cmd_IsKeyPressed;
+
+extern TESClimate* s_forcedClimate;
+
+static bool timePatched = false;
+
+const UInt32 kMsgIconsPathAddr[] = { 0xDC0C38, 0xDC0C78, 0xDC5544, 0xDCE658, 0xDD9148, 0xDE3790, 0xDF3278 };
+
+TESObjectREFR* s_tempPosMarker;
+
+bool Cmd_GetYAFEVersion_Execute(COMMAND_ARGS) {
+	*result = g_version;
+	if (IsConsoleMode()) {
+		Console_Print("GetYAFEVersion >> %.f", *result);
+	}
+	return true;
+}
+
+bool Cmd_GetYAFEVersion_Eval(COMMAND_ARGS_EVAL) {
+	*result = g_version;
+	return true;
+}

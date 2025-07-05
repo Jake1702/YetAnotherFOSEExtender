@@ -1,0 +1,4 @@
+LIBRARY	"YetAnotherFOSEExtender"
+EXPORTS
+FOSEPlugin_Query
+FOSEPlugin_Load
