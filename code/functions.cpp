@@ -46,3 +46,18 @@ bool Cmd_GetValueAlt_Execute(COMMAND_ARGS) {
 		*result = (int)form->GetItemValue();
 	return true;
 }
+
+bool Cmd_SetValueAlt_Execute(COMMAND_ARGS)
+{
+	TESForm *form;
+	UInt32 newVal;
+	if (ExtractArgsEx(EXTRACT_ARGS_EX, &form, &newVal))
+		if (TESValueForm *valForm = DYNAMIC_CAST(form, TESForm, TESValueForm))
+		{
+			valForm->value = newVal;
+			//form->MarkModified(2);
+		}
+		else if IS_ID(form, AlchemyItem)
+			((AlchemyItem*)form)->value = newVal;
+	return true;
+}
