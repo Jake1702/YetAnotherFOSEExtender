@@ -374,3 +374,10 @@ TESIdleForm* TESIdleForm::FindIdle(Actor* animActor)
 		if (*idles) result = (*idles)->FindIdle(animActor);
 	return result;
 }
+
+UInt32 TESForm::GetItemValue() const
+{
+	if (typeID == kFormType_AlchemyItem) return ((AlchemyItem*)this)->value;
+	TESValueForm *valForm = DYNAMIC_CAST(this, TESForm, TESValueForm);
+	return valForm ? valForm->value : 0;
+}

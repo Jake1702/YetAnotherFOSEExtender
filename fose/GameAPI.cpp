@@ -722,7 +722,8 @@ static bool v_ExtractArgsEx(UInt32 numArgs, ParamInfo * paramInfo, UInt8* &scrip
 			break;
 
 			// Need to adjust list based on FO3 types
-			case kParamType_InventoryObject:
+			// case kParamType_InventoryObject:
+			case kParamType_ObjectID:
 			case kParamType_ObjectRef:
 			case kParamType_Actor:
 			case kParamType_SpellItem:
@@ -1049,3 +1050,9 @@ bool ScriptFormatStringArgs::Arg(FormatStringArgs::argType asType, void * outRes
 
 	return false;
 }
+
+const bool kInventoryType[] =
+	{
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+		1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0};

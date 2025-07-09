@@ -33,7 +33,7 @@ enum ParamType
 	kParamType_String =					0x00,
 	kParamType_Integer =				0x01,
 	kParamType_Float =					0x02,
-	kParamType_InventoryObject =		0x03,	// GetItemCount				TESForm *, must pass IsInventoryObjectType check
+	kParamType_ObjectID =		0x03,	// GetItemCount				TESForm *, must pass IsInventoryObjectType check
 	kParamType_ObjectRef =				0x04,	// Activate					TESObjectREFR *
 	kParamType_ActorValue =				0x05,	// ModActorValue			not in switch
 	kParamType_Actor =					0x06,	// ToggleAI					TESObjectREFR *, must pass IsActor
@@ -71,6 +71,7 @@ enum ParamType
 	kParamType_MenuIcon =				0x26,	// unused
 	kParamType_Perk =					0x27,	// Add Perk	
 	kParamType_Note =					0x28,	// Add Note
+	kParamType_Double =					0x2C,	// 
 	kParamType_MiscellaneousStat =		0x29,	// ModPCMiscStat
 	kParamType_IdleForm =				0x30,	// IsLastIdlePlayed
 	kParamType_Message =				0x31,	// ShowTutorialMenu
@@ -89,6 +90,7 @@ enum ParamType
 	kParamType_LeveledItem =			0x3C,	// AddItemToLeveledList
 	kParamType_AnyForm =				0x3D,	// AddFormToFormList
 };
+
 
 enum CommandReturnType : UInt8
 {

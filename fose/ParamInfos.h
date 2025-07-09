@@ -105,7 +105,7 @@ static ParamInfo kParams_OneMagicEffect[1] =
 	{	"magic effect", kParamType_MagicEffect, 0 }, 
 };
 
-static ParamInfo kParams_OneInventoryObject[1] =
+/* static ParamInfo kParams_OneInventoryObject[1] =
 {
 	{	"item", kParamType_InventoryObject, 0},
 };
@@ -149,7 +149,7 @@ static ParamInfo kParams_OneFormList_OneOptionalInventoryObject[2] =
 {
 	{	"form list",	kParamType_FormList,		0	},
 	{	"target item",	kParamType_InventoryObject,	1	},
-};
+}; */
 
 
 static ParamInfo kParams_OneActorValue[1] =
@@ -203,11 +203,11 @@ static ParamInfo kParams_FormList[1] =
 	{	"form list", kParamType_FormList,	0		},
 };
 
-static ParamInfo kParams_OneString_OneOptionalInventoryObject[2] =
+/* static ParamInfo kParams_OneString_OneOptionalInventoryObject[2] =
 {
 	{	"string",		kParamType_String,			0	},
 	{	"item",			kParamType_InventoryObject,	1	},
-};
+}; */
 
 static ParamInfo kParams_TwoStrings[2] =
 {
@@ -241,6 +241,17 @@ static ParamInfo kParams_OneInt_OneOptionalObject[2] =
 {
 	{	"int",	kParamType_Integer,			0	},
 	{	"item",			kParamType_TESObject,	1	},
+};
+
+static ParamInfo kParams_OneOptionalObjectID[1] =
+{
+	{	"item", kParamType_ObjectID, 1},
+};
+
+static ParamInfo kParams_OneInt_OneOptionalObjectID[2] =
+{
+	{	"path type",	kParamType_Integer,			0	},
+	{	"item",			kParamType_ObjectID,	1	},
 };
 
 static ParamInfo kParams_SetEquippedFloat[2] =

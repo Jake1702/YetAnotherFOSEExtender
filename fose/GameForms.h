@@ -336,6 +336,8 @@ enum ObjectVtbl
 #define IS_ID(form, type) (form->typeID == kFormType_##type)
 #define NOT_ID(form, type) (form->typeID != kFormType_##type)
 
+extern const bool kInventoryType[];
+
 class BoundObjectListHead;
 class TESSound;
 class BGSImpactDataSet;
@@ -466,6 +468,8 @@ public:
 	virtual char *	GetName2(void);
 	virtual char * GetEditorID(void);
 	virtual bool	SetEditorID(const char * edid);		// simply returns true at run-time
+
+	UInt32 GetItemValue() const;
 	// 4E
 
 	enum

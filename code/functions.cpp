@@ -39,3 +39,10 @@ bool Cmd_GetYAFEVersion_Eval(COMMAND_ARGS_EVAL) {
 	*result = g_version;
 	return true;
 }
+
+bool Cmd_GetValueAlt_Execute(COMMAND_ARGS) {
+	TESForm* form = nullptr;
+	if (ExtractArgsEx(EXTRACT_ARGS_EX, &form) && (form || (thisObj && (form = thisObj->baseForm) && kInventoryType[form->typeID])))
+		*result = (int)form->GetItemValue();
+	return true;
+}
