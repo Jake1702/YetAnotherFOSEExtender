@@ -61,3 +61,56 @@ bool Cmd_SetValueAlt_Execute(COMMAND_ARGS)
 			((AlchemyItem*)form)->value = newVal;
 	return true;
 }
+
+bool Cmd_GetBit_Execute(COMMAND_ARGS)
+{
+	*result = 0;
+
+	UInt32	data = 0;
+	UInt32	idx = 0;
+
+	if(!ExtractArgs(EXTRACT_ARGS, &data, &idx))
+		return true;
+
+	*result = (data & (1 << idx)) >> idx;
+
+	return true;
+}
+
+bool Cmd_SetBit_Execute(COMMAND_ARGS)
+{
+	*result = 0;
+
+	UInt32	data = 0;
+	UInt32	idx = 0;
+	UInt32	doSet = 1;	// default value
+
+	if(!ExtractArgs(EXTRACT_ARGS, &data, &idx, &doSet))
+		return true;
+
+	if(doSet)
+		data |= (1 << idx);
+	else
+		data &= ~(1 << idx);
+
+	*result = data;
+
+	return true;
+}
+
+bool Cmd_ClearBit_Execute(COMMAND_ARGS)
+{
+	*result = 0;
+
+	UInt32	data = 0;
+	UInt32	idx = 0;
+
+	if(!ExtractArgs(EXTRACT_ARGS, &data, &idx))
+		return true;
+
+	data &= ~(1 << idx);
+
+	*result = data;
+
+	return true;
+}

@@ -120,6 +120,7 @@ copy ""$(TargetDir)$(TargetName).pdb"" "Z:\home\jake\.steam\steam\steamapps\comp
     <ClCompile Include="code\main.cpp" />
     <ClCompile Include="common\IDebugLog.cpp" />
     <ClCompile Include="common\IErrors.cpp" />
+    <ClCompile Include="fose\CommandTable.cpp" />
     <ClCompile Include="fose\GameAPI.cpp" />
     <ClCompile Include="fose\GameBSExtraData.cpp" />
     <ClCompile Include="fose\GameData.cpp" />

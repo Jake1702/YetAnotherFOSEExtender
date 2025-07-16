@@ -58,6 +58,9 @@ bool FOSEPlugin_Load(const FOSEInterface * fose)
 	REG_CMD(GetYAFEVersion);
 	REG_CMD(GetValueAlt);
 	REG_CMD(SetValueAlt);
+	REG_CMD(GetBit);
+	REG_CMD(SetBit);
+	REG_CMD(ClearBit);
 	s_strArgBuffer = (char*)malloc(0x4000);
 	s_strValBuffer = (char*)malloc(0x10000);
 

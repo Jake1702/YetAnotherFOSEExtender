@@ -250,3 +250,5 @@ struct CommandMetadata
 	UInt32				parentPlugin;
 	CommandReturnType	returnType;
 };
+
+extern const Cmd_Parse g_defaultParseCommand;
